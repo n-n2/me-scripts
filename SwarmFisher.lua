@@ -34,7 +34,7 @@ local function goBank()
     print("Going to bank")
     API.DoAction_Object1(0x29,API.OFF_ACT_GeneralObject_route2,{ BANK_NET[1] },50)
     API.WaitUntilMovingEnds()
-    while Inventory:IsFull() do
+    while API.Read_LoopyLoop() and Inventory:IsFull() do
         print("Inventory is full, waiting to deposit fish")
         API.RandomSleep2(3000, 500, 200)
     end
