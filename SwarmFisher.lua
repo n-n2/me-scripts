@@ -5,7 +5,7 @@ SwarmFisher Script
 Version: 1.0
 Author: RainRS
 Description: Automatically fishes at the deep sea swarm and banks catches
-Starting Location: Shantay Pass
+Starting Location: Deep Sea Fishing Swarm
 
 Requirements:
 - Access to the deep sea fishing swarm
@@ -30,22 +30,7 @@ local FISHING_ANIMATION = {24932}
 
 local STATE = "fishing"
 
-local function run_to_tile(x, y, z)
-    math.randomseed(os.time())
-
-    local rand1 = math.random(-2, 2)
-    local rand2 = math.random(-2, 2)
-    local tile = WPOINT.new(x + rand1, y + rand2, z)
-
-    API.DoAction_WalkerW(tile)
-
-
-    local threshold = math.random(4, 6)
-    while API.Read_LoopyLoop() and API.Math_DistanceW(API.PlayerCoord(), tile) > threshold do
-        API.RandomSleep2(200, 200, 200)
-    end
-end 
-    local function goBank()
+local function goBank()
     print("Going to bank")
     API.DoAction_Object1(0x29,API.OFF_ACT_GeneralObject_route2,{ BANK_NET[1] },50)
     API.WaitUntilMovingEnds()
