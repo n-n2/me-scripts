@@ -277,6 +277,7 @@ local function checkPlayerState()
     return true
 end
 
+API.SetMaxIdleTime(5)
 while API.Read_LoopyLoop() do
     if not checkPlayerState() then
         break
