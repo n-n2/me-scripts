@@ -86,7 +86,7 @@ end
 local function makeHeadlessArrows()
     print("Making headless arrows")
     EXPLAINER = "We have no more headless arrows."
-    while Inventory:InvStackSize(314) > 0 and Inventory:InvStackSize(52) > 0 and API.Read_LoopyLoop() do -- Check for feathers and arrow shafts
+    while Inventory:InvStackSize(314) > 0 and Inventory:InvStackSize(52) > 0 and  Inventory:InvStackSize(53) < BUY_AMOUNT and API.Read_LoopyLoop() do -- Check for feathers and arrow shafts
         print("We have " .. Inventory:InvStackSize(314) .. " feathers and " .. Inventory:InvStackSize(52) .. " arrow shafts.")
         if API.DoAction_Ability_Direct(featherShaftAbility, 1, API.OFF_ACT_GeneralInterface_route) then
             print("We have started making headless arrows!")
