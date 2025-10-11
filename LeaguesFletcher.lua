@@ -40,6 +40,8 @@ print("LeaguesFletcher started!")
 
 local API = require("api")
 
+local FLETCHING_STORE = {683}
+
 local REAGENT2_ID = 0
 local REAGENT2 = ARROW_TYPE .. " arrowheads" -- "Adamant", "Steel", "Mithril", "Rune", "Iron"
 
